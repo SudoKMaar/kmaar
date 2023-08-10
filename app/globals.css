@@ -2,10 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(112, 0, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(112, 0, 255, 0.75);
+  opacity: 0.5;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.indigo.dark");
+  opacity: 1;
+}
+
+::-moz-selection {
+  background-color: theme("colors.purple");
+  color: #fff;
+}
+
+::selection {
+  background-color: theme("colors.purple");
+  color: #fff;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(112, 0, 255, 0.05);
+  cursor: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +56,183 @@
 }
 
 body {
+  scroll-behavior: smooth;
+  -ms-overflow-style: scrollbar;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  color: #fff;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+  background: #120e16; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #120e16,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #120e16,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.progress {
+  height: 0.1875rem;
+}
+.progress-bar {
+  height: 0.2rem;
+  transform-origin: left;
+  will-change: transform;
+  transform: scaleX(0);
+  width: 100%;
+  background-color: #fff;
+}
+
+.glow {
+  filter: drop-shadow(1px 1px 2px rgba(112, 0, 255, 0.75));
+}
+
+.purple-gradient {
+  background: rgba(112, 0, 255, 0.75);
+  background: linear-gradient(
+    -90deg,
+    rgba(112, 0, 255, 0.75) 0%,
+    rgba(60, 51, 80, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    -90deg,
+    rgba(112, 0, 255, 0.75) 0%,
+    rgba(60, 51, 80, 0) 100%
+  );
+}
+
+::selection {
+  background-color: theme("colors.purple");
+  color: #fff;
+}
+
+.section-container {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 640px) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+
+  @media (min-width: 1536px) {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
+
+.cursor {
+  border-radius: 100%;
+  mix-blend-mode: difference;
+}
+
+.cursorFollower {
+  border-radius: 100%;
+  left: -0.8rem;
+  top: -0.8rem;
+  background: rgba(255, 255, 255, 0.027);
+  transform: translate(5px, 5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  will-change: transform;
+}
+
+.about-3 {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #8b31ff 51%,
+    #7000ff 102%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.primaryButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: auto;
+  background-clip: padding-box;
+  border-radius: 0.4rem;
+  color: #fff;
+  background-size: 220%;
+  outline: 2px solid theme("colors.indigo.dark");
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    theme("colors.purple") 50%
+  );
+  transition: all 0.3s ease-in-out;
+}
+
+.primaryButton:hover,
+.primaryButton:active {
+  background-position: 100%;
+  color: #fff;
+  box-shadow: 0 0 1rem theme("colors.indigo.dark");
+}
+
+.text-strong {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #8b31ff 51%,
+    #7000ff 102%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glassmorphic {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gInput {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
