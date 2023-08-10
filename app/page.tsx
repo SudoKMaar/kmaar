@@ -15,12 +15,6 @@ import ContactMe from "./components/ContactMe";
 import ProjectSection from "./components/project/Projects";
 import Tech from "./components/skill/Tech";
 
-export const isSmallScreen = (): boolean => document.body.clientWidth < 767;
-export const NO_MOTION_PREFERENCE_QUERY =
-  "(prefers-reduced-motion: no-preference)";
-export interface IDesktop {
-  isDesktop: boolean;
-}
 const DEBOUNCE_TIME = 100;
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);

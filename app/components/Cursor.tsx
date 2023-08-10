@@ -1,6 +1,11 @@
 import { MutableRefObject, useEffect, useRef } from "react";
 import { gsap, Linear } from "gsap";
-import { IDesktop, isSmallScreen } from "../page";
+
+const isSmallScreen = (): boolean => document.body.clientWidth < 767;
+const NO_MOTION_PREFERENCE_QUERY = "(prefers-reduced-motion: no-preference)";
+interface IDesktop {
+  isDesktop: boolean;
+}
 
 const Cursor = ({ isDesktop }: IDesktop) => {
   const cursor = useRef<HTMLDivElement>(null);

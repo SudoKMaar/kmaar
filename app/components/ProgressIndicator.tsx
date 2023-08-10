@@ -1,6 +1,5 @@
-import { NO_MOTION_PREFERENCE_QUERY } from "../page";
 import { useEffect, useState } from "react";
-
+const NO_MOTION_PREFERENCE_QUERY = "(prefers-reduced-motion: no-preference)";
 const ProgressIndicator = () => {
   const [progress, setProgress] = useState(0);
 
