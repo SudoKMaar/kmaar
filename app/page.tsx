@@ -10,6 +10,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import AboutSection from "./components/AboutSection";
 import CollaborationSection from "./components/CollaborationSection";
 import ExperienceSection from "./components/ExperienceSection";
+import StarsCanvas from "./components/Stars";
+import ContactMe from "./components/ContactMe";
 
 export const isSmallScreen = (): boolean => document.body.clientWidth < 767;
 export const NO_MOTION_PREFERENCE_QUERY =
@@ -46,9 +48,6 @@ export default function Home() {
       window.removeEventListener("resize", debouncedDimensionCalculator);
   }, [timer]);
 
-  const renderBackdrop = (): React.ReactNode => (
-    <div className="fixed top-0 left-0 h-screen w-screen bg-gray-900 -z-1"></div>
-  );
   useEffect(() => {
     const { innerHeight } = window;
 
@@ -79,6 +78,13 @@ export default function Home() {
         </section>
         <section id="collaboration" className="min-h[100vh] z-6">
           <CollaborationSection />
+        </section>
+        <section
+          id="contact"
+          className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
+        >
+          <StarsCanvas />
+          <ContactMe />
         </section>
         Build still in progress suffering from creativity or ctrl c+ ctrl v
         block
