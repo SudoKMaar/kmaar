@@ -8,6 +8,7 @@ import HeroSection from "./components/heroSection/HeroSection";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import AboutSection from "./components/AboutSection";
+import CollaborationSection from "./components/CollaborationSection";
 
 export const isSmallScreen = (): boolean => document.body.clientWidth < 767;
 export const NO_MOTION_PREFERENCE_QUERY =
@@ -68,6 +69,9 @@ export default function Home() {
         <section id="empty" className="h-[90vh] -z-2"></section>
         <section id="about" className="min-h-[100vh]">
           <AboutSection clientHeight={clientHeight} />
+        </section>
+        <section id="collaboration" className="min-h[100vh] z-6">
+          <CollaborationSection />
         </section>
         Build still in progress suffering from creativity or ctrl c+ ctrl v
         block

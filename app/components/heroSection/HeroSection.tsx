@@ -45,14 +45,14 @@ function HeroSection({}: Props) {
         </motion.div>
       </div>
       <div className="w-[100vw] h-[100vh] absolute right-0 bottom-0">
-        <ParticlesContainer />
+        {/* <ParticlesContainer /> */}
         <div className="bg-none md:bg-explosion md:bg-cover md:bg-right md:bg-no-repeat w-full h-full absolute mix-bleed-color-dodge translate-z-0 -z-10"></div>
         <motion.div
           variants={fadeIn("up", 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="z-5 absolute  bottom-20 sm:px-36 px-26 max-w-7xl mx-auto gap-5"
+          className="z-5 absolute bottom-10 sm:px-36 px-26 max-w-7xl mx-auto gap-5"
         >
           <ProjectBtn />
         </motion.div>
