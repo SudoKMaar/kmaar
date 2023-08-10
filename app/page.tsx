@@ -9,6 +9,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import AboutSection from "./components/AboutSection";
 import CollaborationSection from "./components/CollaborationSection";
+import ExperienceSection from "./components/ExperienceSection";
 
 export const isSmallScreen = (): boolean => document.body.clientWidth < 767;
 export const NO_MOTION_PREFERENCE_QUERY =
@@ -69,6 +70,12 @@ export default function Home() {
         <section id="empty" className="h-[90vh] -z-2"></section>
         <section id="about" className="min-h-[100vh]">
           <AboutSection clientHeight={clientHeight} />
+        </section>
+        <section
+          id="experience"
+          className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
+        >
+          <ExperienceSection />
         </section>
         <section id="collaboration" className="min-h[100vh] z-6">
           <CollaborationSection />
