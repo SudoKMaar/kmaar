@@ -12,6 +12,8 @@ import CollaborationSection from "./components/CollaborationSection";
 import ExperienceSection from "./components/ExperienceSection";
 import StarsCanvas from "./components/Stars";
 import ContactMe from "./components/ContactMe";
+import ProjectSection from "./components/project/Projects";
+import Tech from "./components/skill/Tech";
 
 export const isSmallScreen = (): boolean => document.body.clientWidth < 767;
 export const NO_MOTION_PREFERENCE_QUERY =
@@ -76,14 +78,23 @@ export default function Home() {
         >
           <ExperienceSection />
         </section>
-        <section id="collaboration" className="min-h[100vh] z-6">
+        <section
+          id="skills"
+          className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
+        >
+          <Tech />
+        </section>
+        <section id="project" className="relative">
+          <ProjectSection />
+        </section>
+        <section id="collaboration" className="min-h-[100vh]">
           <CollaborationSection />
         </section>
         <section
           id="contact"
           className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
         >
-          <StarsCanvas />
+          {/* <StarsCanvas /> */}
           <ContactMe />
         </section>
         Build still in progress suffering from creativity or ctrl c+ ctrl v
