@@ -61,7 +61,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 0.4rem;
+  width: 0.2rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -244,4 +244,15 @@ $bg: #f4faff;
 
 #mouth-frown {
   visibility: hidden;
+}
+
+.p-image {
+  height: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  background-color: rgba(112, 0, 255, 0);
+  border-radius: 10%;
+  object-fit: contain;
 }

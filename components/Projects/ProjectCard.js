@@ -22,11 +22,10 @@ const ProjectCard = () => {
             key={index}
             className="card w-[300px] h-[350px] flex flex-col items-center bg-[#7000ffbf] rounded-xl border-4 border-primary-600 link"
           >
-            <div className="w-full h-[60px] flex items-center gap-1 p-1 flex-col">
-              <Image
-                className="h-[135px] flex justify-center items-center w-[240px] bg-[rgba(112, 0, 255, 0)] rounded-[10%] object-contain"
-                width={800}
-                height={450}
+            <div className="w-full h-14 flex items-center gap-1 p-1 flex-col">
+              <img
+                className="p-image"
+                loading="lazy"
                 src={project.image}
                 alt={project.name}
               />
@@ -40,7 +39,7 @@ const ProjectCard = () => {
                 {project.name}
               </span>
               <span
-                className="text-center h-max bg-[#7000ffbf] text-[#16161b] rounded-xl text-sm p-1"
+                className="text-center h-max bg-[#7000ffbf] text-[#16161b] rounded-xl text-sm p-1 "
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "400",
@@ -48,7 +47,7 @@ const ProjectCard = () => {
               >
                 {project.description}
               </span>
-              <span className="absolute bottom-1 flex flex-row link gap-3 z-19 link">
+              <span className="absolute bottom-1 flex flex-row link gap-3 z-20 link">
                 <a
                   href={project.source_code_link}
                   className="link primaryButton p-1 h-[30px] w-[120px] text-center drop-shadow-md bottom-1"

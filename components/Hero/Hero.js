@@ -29,12 +29,12 @@ function Hero() {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="z-5 absolute bottom-10 sm:px-36 px-26 max-w-7xl mx-auto gap-5"
+          className="z-10 absolute bottom-10 sm:px-36 px-26 max-w-7xl mx-auto gap-5"
         >
           <ProjectBtn />
         </motion.div>
         <a href="#about">
-          <div className="absolute bottom-0 right-[50%] w-[35px] h-[64px] rounded-3xl border-4 border-[#aaa6c3] flex justify-center items-start p-2">
+          <div className="absolute bottom-0 right-[50%] w-[35px] h-[64px] rounded-3xl border-4 border-[#aaa6c3] flex justify-center items-start z-40 p-2">
             <motion.div
               animate={{ y: [0, 24, 0] }}
               transition={{

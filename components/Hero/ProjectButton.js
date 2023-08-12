@@ -7,7 +7,7 @@ const ProjectBtn = () => {
     <div className="mx-auto xl:mx-0">
       <a
         href="#project"
-        className="link z-18 relative w-[185px] link h-[185px] flex justify-center items-center bg-circleStar bg-cover bg-center bg-no-repeat group"
+        className="link z-0 relative w-[185px] link h-[185px] flex justify-center items-center bg-circleStar bg-cover bg-center bg-no-repeat group"
         title="This is a link to the projects page"
       >
         <Image
@@ -15,9 +15,9 @@ const ProjectBtn = () => {
           alt=""
           width={141}
           height={148}
-          className="z-18 animate-spin-slow wfull h-full max-w-[141px] max-h-[148px]"
+          className="z-20 animate-spin-slow wfull h-full max-w-[141px] max-h-[148px]"
         />
-        <HiArrowRight className="z-18 absolute link text-4xl group-hover:translate-x-2 transition-all duration-300" />
+        <HiArrowRight className="z-30 absolute link text-4xl group-hover:translate-x-2 transition-all duration-300" />
       </a>
     </div>
   );

@@ -58,15 +58,15 @@ export const projects = [
     description:
       "Explore a user-friendly Figma prototype for an adoption and sterilization awareness website. Experience the sleek design and contribute to a noble cause.",
     image: "/projects/mockup.jpg",
-    source_code_link: "https",
-    demo_link: "https",
+    source_code_link: "",
+    demo_link: "",
   },
   {
     name: "LOrem",
     description:
       "A completely functional basic calculator website created with React. It allows you to perform mathematical calculations effortlessly. With testing implemented, the results are accurate.",
     image: "/projects/mockup.jpg",
-    source_code_link: "https",
+    source_code_link: "",
     demo_link: "",
   },
 ];

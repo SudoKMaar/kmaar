@@ -51,16 +51,16 @@ export default function Home() {
           <Loader />
         ) : (
           <>
-            <section id="nav" className="h-[10vh] z-200">
+            <Cursor isDesktop={isDesktop} className="absolute z-50" />
+            <section id="nav" className="h-[10vh] z-50">
               <Navbar />
             </section>
             <ProgressIndicator />
-            <Cursor isDesktop={isDesktop} className="z-[5000]" />
             <div className="h-[90vh] relative z-[-5]" />
-            <section id="hero" className="absoute top-0 z-0">
-              <Hero />
-            </section>
-            <main className="z-15">
+            <main className="z-20">
+              <section id="hero" className="absoute top-[-10vh] z-0">
+                <Hero />
+              </section>
               <section id="about" className="min-h-[100vh] z-0">
                 <About clientHeight={clientHeight} />
               </section>
