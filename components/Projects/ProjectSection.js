@@ -3,7 +3,7 @@ import MarqueeCards from "./MarqueeCards";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 
-const ProjectSection = () => {
+const ProjectSection = ({ projects }) => {
   return (
     <div className="w-full overflow-hidden-web flex justify-center">
       <div className="w-full min-h-[800px] flex flex-col xl:w-[70%]">
@@ -34,13 +34,13 @@ const ProjectSection = () => {
           <div className="relative">
             <div className="absolute top-[45px] w-full h-[1px] bg-[#7000ffbf]"></div>
             <MarqueeCards direction="left">
-              <ProjectCard />
+              <ProjectCard projects={projects} />
             </MarqueeCards>
           </div>
           <div className="relative">
             <div className="absolute top-[45px] w-full h-[1px] bg-[#7000ffbf]"></div>
             <MarqueeCards direction="right">
-              <ProjectCard />
+              <ProjectCard projects={projects} />
             </MarqueeCards>
           </div>
         </div>

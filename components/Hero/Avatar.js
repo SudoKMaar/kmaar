@@ -1,10 +1,10 @@
-import Image from "next/image";
+import { urlForImage } from "../../sanity/lib/image";
 
-const Avatar = () => {
+const Avatar = ({ pageInfo }) => {
   return (
     <div className="hidden md:flex lg:flex lg:max-w-none">
-      <Image
-        src="/hero/hero-image.png"
+      <img
+        src={urlForImage(pageInfo.heroImage).url()}
         width={400}
         height={400}
         alt=""
@@ -13,4 +13,5 @@ const Avatar = () => {
     </div>
   );
 };
+
 export default Avatar;

@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 
-function Navbar() {
+function Navbar({ socials }) {
   return (
     <nav className="sticky top-0 py-5 h-[10vh] flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center bg-gradient-to-b from-[#120e16] to-[rgba(18,14,22,0)] transition-all duration-300">
       <motion.div
@@ -25,21 +25,14 @@ function Navbar() {
         transition={{ duration: 1.5 }}
         className="flex link flex-row link itmes-center"
       >
-        <SocialIcon
-          url="https://instagram.com/kmaar44"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://instagram.com/kmaar44"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://instagram.com/kmaar44"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
     </nav>
   );

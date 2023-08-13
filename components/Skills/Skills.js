@@ -1,9 +1,9 @@
 import React from "react";
 import BallCanvas from "./Balls";
 import { motion } from "framer-motion";
-import { technologies } from "../../utils/constants";
+import { urlForImage } from "../../sanity/lib/image";
 
-const Skills = () => {
+const Skills = ({ skills }) => {
   return (
     <>
       <motion.div
@@ -28,9 +28,9 @@ const Skills = () => {
         </h2>
       </motion.div>
       <div className="flex flex-row flex-wrap justify-center gap-10">
-        {technologies.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}>
-            <BallCanvas icon={technology.icon} />
+        {skills?.map((skill) => (
+          <div className="w-28 h-28" key={skill._id}>
+            <BallCanvas icon={urlForImage(skill.skillImage).url().toString()} />
           </div>
         ))}
       </div>

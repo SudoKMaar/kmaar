@@ -1,12 +1,11 @@
 import { m, LazyMotion, domAnimation } from "framer-motion";
-import { projects } from "../../utils/constants";
-import Image from "next/image";
+import { urlForImage } from "../../sanity/lib/image";
 
-const ProjectCard = () => {
+const ProjectCard = ({ projects }) => {
   return (
     <div className="flex">
       <LazyMotion features={domAnimation} strict>
-        {projects?.map((project, index) => (
+        {projects?.map((projectItem, index) => (
           <m.div
             initial={{ scale: 0.8 }}
             animate={{
@@ -26,8 +25,8 @@ const ProjectCard = () => {
               <img
                 className="p-image"
                 loading="lazy"
-                src={project.image}
-                alt={project.name}
+                src={urlForImage(projectItem.image).url()}
+                alt={projectItem.projectTitle}
               />
               <span
                 className="text-xl"
@@ -36,7 +35,7 @@ const ProjectCard = () => {
                   fontWeight: "bold",
                 }}
               >
-                {project.name}
+                {projectItem.projectTitle}
               </span>
               <span
                 className="text-center h-max bg-[#7000ffbf] text-[#16161b] rounded-xl text-sm p-1 "
@@ -45,11 +44,11 @@ const ProjectCard = () => {
                   fontWeight: "400",
                 }}
               >
-                {project.description}
+                {projectItem.description}
               </span>
               <span className="absolute bottom-1 flex flex-row link gap-3 z-20 link">
                 <a
-                  href={project.source_code_link}
+                  href={projectItem.source_code_link}
                   className="link primaryButton p-1 h-[30px] w-[120px] text-center drop-shadow-md bottom-1"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -57,7 +56,7 @@ const ProjectCard = () => {
                   GitHub
                 </a>
                 <a
-                  href={project.demo_link}
+                  href={projectItem.demo_link}
                   className="link primaryButton p-1 h-[30px] w-[120px] text-center shadow-md bottom-1"
                   target="_blank"
                   rel="noopener noreferrer"

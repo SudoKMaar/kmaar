@@ -15,8 +15,19 @@ import Scripts from "@/components/Scripts/Scripts";
 import StarsCanvas from "@/components/Contact/Stars";
 import Navbar from "@/components/Header/Navbar";
 import ProjectSection from "@/components/Projects/ProjectSection";
+import { fetchpageInfo } from "utils/fetchPageInfo";
+import { fetchSkils } from "utils/fetchSkills";
+import { fetchProjects } from "utils/fetchProjects";
+import { fetchSocials } from "utils/fetchSocials";
+import { fetchExperience } from "utils/fetchExperience";
 
-export default function Home() {
+export default function Home({
+  pageInfo,
+  experience,
+  projects,
+  skills,
+  socials,
+}) {
   gsap.registerPlugin(ScrollTrigger);
   gsap.config({ nullTargetWarn: false });
 
@@ -53,13 +64,13 @@ export default function Home() {
           <>
             <Cursor isDesktop={isDesktop} className="absolute z-50" />
             <section id="nav" className="h-[10vh] z-50">
-              <Navbar />
+              <Navbar socials={socials} />
             </section>
             <ProgressIndicator />
             <div className="h-[90vh] relative z-[-5]" />
             <main className="z-20">
               <section id="hero" className="absoute top-[-10vh] z-0">
-                <Hero />
+                <Hero pageInfo={pageInfo} />
               </section>
               <section id="about" className="min-h-[100vh] z-0">
                 <About clientHeight={clientHeight} />
@@ -68,16 +79,16 @@ export default function Home() {
                 id="experience"
                 className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
               >
-                <Work />
+                <Work experience={experience} />
               </section>
               <section
                 id="skills"
                 className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
               >
-                <Skills />
+                <Skills skills={skills} />
               </section>
               <section id="project" className="relative z-0">
-                <ProjectSection />
+                <ProjectSection projects={projects} />
               </section>
               <section id="collaboration" className="min-h-[100vh] z-0">
                 <Collaboration clientHeight={clientHeight} />
@@ -97,3 +108,21 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const pageInfo = await fetchpageInfo();
+  const experience = await fetchExperience();
+  const skills = await fetchSkils();
+  const projects = await fetchProjects();
+  const socials = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experience,
+      skills,
+      projects,
+      socials,
+    },
+  };
+};

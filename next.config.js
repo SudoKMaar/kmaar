@@ -9,6 +9,7 @@ const nextConfig = {
     skipWaiting: true,
     disable: !isProd,
   },
+  images: { domain: ["cdn.sanity.io"] },
 };
 
 module.exports = withPWA({
@@ -22,5 +23,6 @@ module.exports = withPWA({
 
     return config;
   },
+
   ...nextConfig,
 });
