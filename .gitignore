@@ -34,7 +34,7 @@ yarn-error.log*
 .vercel
 /.env.local
 /.sanity
-/.dist
+/dist
 # PWA files
 **/public/sw.js
 **/public/workbox-*.js
