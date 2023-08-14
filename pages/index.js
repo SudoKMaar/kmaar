@@ -20,8 +20,7 @@ import { fetchProjects } from "utils/fetchProjects";
 import { fetchSocials } from "utils/fetchSocials";
 import { fetchExperience } from "utils/fetchExperience";
 
-export default function Home() {
-  // { experience, projects, skills, socials }) {
+export default function Home({ experience, projects, skills, socials }) {
   gsap.registerPlugin(ScrollTrigger);
   gsap.config({ nullTargetWarn: false });
 
@@ -58,7 +57,7 @@ export default function Home() {
           <>
             <Cursor isDesktop={isDesktop} className="absolute z-50" />
             <section id="nav" className="h-[10vh] z-50">
-              {/* <Navbar socials={socials} /> */}
+              <Navbar socials={socials} />
             </section>
             <ProgressIndicator />
             <div className="h-[90vh] relative z-[-5]" />
@@ -69,7 +68,7 @@ export default function Home() {
               <section id="about" className="min-h-[100vh] z-0">
                 <About clientHeight={clientHeight} />
               </section>
-              {/* <section
+              <section
                 id="experience"
                 className="min-h-[100vh] max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10"
               >
@@ -83,7 +82,7 @@ export default function Home() {
               </section>
               <section id="project" className="relative z-0">
                 <ProjectSection projects={projects} />
-              </section> */}
+              </section>
               <section id="collaboration" className="min-h-[100vh] z-0">
                 <Collaboration clientHeight={clientHeight} />
               </section>
@@ -103,18 +102,18 @@ export default function Home() {
   );
 }
 
-// export const getStaticProps = async () => {
-//   const experience = await fetchExperience();
-//   const skills = await fetchSkils();
-//   const projects = await fetchProjects();
-//   const socials = await fetchSocials();
+export const getStaticProps = async () => {
+  const experience = await fetchExperience();
+  const skills = await fetchSkils();
+  const projects = await fetchProjects();
+  const socials = await fetchSocials();
 
-//   return {
-//     props: {
-//       experience,
-//       skills,
-//       projects,
-//       socials,
-//     },
-//   };
-// };
+  return {
+    props: {
+      experience,
+      skills,
+      projects,
+      socials,
+    },
+  };
+};
