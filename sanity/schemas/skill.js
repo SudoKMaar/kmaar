@@ -15,7 +15,9 @@ export default defineType({
       name: "skillImage",
       title: "Skill Image",
       type: "image",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+      },
     },
   ],
   orderings: [
