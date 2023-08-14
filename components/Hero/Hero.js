@@ -6,9 +6,14 @@ import Avatar from "./Avatar";
 import ParticlesContainer from "./ParticlesContainer";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
-function Hero({ pageInfo }) {
+function Hero() {
   const [text, count] = useTypewriter({
-    words: pageInfo.words,
+    words: [
+      "A Pragmatic Full Stack Developer",
+      "Guy who creates aesthetic & modern app",
+      "A Fierce Gamer by Passion",
+      "From Coding Domains to Virtual Realms, I Conquer all Landscape",
+    ],
     loop: true,
     typeSpeed: 40,
     deleteSpeed: 1,
@@ -50,7 +55,7 @@ function Hero({ pageInfo }) {
           transition={{ duration: 1, ease: "easeInOut" }}
           className="z-18 w-full h-full max-w-[400px] max-h-[400px] absolute right-[8%] bottom-0"
         >
-          <Avatar pageInfo={pageInfo} />
+          <Avatar />
         </motion.div>
       </div>
       <div className="sm:px-16 px-6 absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5">
@@ -67,7 +72,7 @@ function Hero({ pageInfo }) {
           <h1 className="text-white font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2">
             Hi, Its me
             <br />
-            <span className="text-[#7000ffbf]">{pageInfo.name}</span>
+            <span className="text-[#7000ffbf]">Abhishek Kumar</span>
           </h1>
           <p className="font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2 text-white-100 max-w-[75%]">
             <span>{text}</span>
