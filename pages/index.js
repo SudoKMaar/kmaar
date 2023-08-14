@@ -20,7 +20,8 @@ import { fetchProjects } from "utils/fetchProjects";
 import { fetchSocials } from "utils/fetchSocials";
 import { fetchExperience } from "utils/fetchExperience";
 
-export default function Home({ experience, projects, skills, socials }) {
+export default function Home() {
+  // { experience, projects, skills, socials }) {
   gsap.registerPlugin(ScrollTrigger);
   gsap.config({ nullTargetWarn: false });
 
@@ -102,18 +103,18 @@ export default function Home({ experience, projects, skills, socials }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const experience = await fetchExperience();
-  const skills = await fetchSkils();
-  const projects = await fetchProjects();
-  const socials = await fetchSocials();
+// export const getStaticProps = async () => {
+//   const experience = await fetchExperience();
+//   const skills = await fetchSkils();
+//   const projects = await fetchProjects();
+//   const socials = await fetchSocials();
 
-  return {
-    props: {
-      experience,
-      skills,
-      projects,
-      socials,
-    },
-  };
-};
+//   return {
+//     props: {
+//       experience,
+//       skills,
+//       projects,
+//       socials,
+//     },
+//   };
+// };
