@@ -256,3 +256,13 @@ $bg: #f4faff;
   border-radius: 10%;
   object-fit: contain;
 }
+
+.purple-gradient {
+  background: rgba(112, 0, 255, 0.75);
+  background: linear-gradient(-90deg,
+      rgba(112, 0, 255, 0.75) 0%,
+      rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(-90deg,
+      rgba(112, 0, 255, 0.75) 0%,
+      rgba(60, 51, 80, 0) 100%);
+}
