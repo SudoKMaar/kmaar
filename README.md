@@ -4,7 +4,7 @@
 
 Welcome to **KMaar Portfolio**! This repository contains the source code for my personal portfolio website. It showcases my skills, projects, work experience, and provides insights into my journey as a developer. Feel free to explore and learn more about me.
 
-**Live Demo:** [KMaar Portfolio](https://www.kmaar.vercel.app)
+**Live Demo:** [KMaar Portfolio](https://kmaar.vercel.app)
 
 ## Table of Contents
 
