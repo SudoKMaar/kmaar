@@ -63,7 +63,7 @@ export default function Home({
         ) : (
           <>
             <Cursor isDesktop={isDesktop} className="absolute z-50" />
-            <section id="nav" className="h-[10vh] z-50">
+            <section id="nav" className="sticky h-[10vh] z-50">
               <Navbar socials={socials} />
             </section>
             <ProgressIndicator />
@@ -72,7 +72,7 @@ export default function Home({
               <section id="hero" className="absoute top-[-10vh] z-0">
                 <Hero pageInfo={pageInfo} />
               </section>
-              <section id="about" className="min-h-[100vh] z-0">
+              <section id="about" className="relative min-h-[100vh] z-0">
                 <About clientHeight={clientHeight} />
               </section>
               <section

@@ -54,7 +54,7 @@ const About = ({ clientHeight }) => {
         } section-container`}
       >
         <h1 className="font-medium text-[2.70rem] md:text-6xl lg:text-[4rem] text-center quote">
-          <span className="about-2 leading-tight">
+          <span className="about-1 leading-tight">
             In a range of{" "}
             <span className="about-3 text-strong font-bold">COOL BUILDS</span>{" "}
             and{" "}
@@ -62,7 +62,7 @@ const About = ({ clientHeight }) => {
             deliver{" "}
             <span className="about-3 text-strong font-bold">REAL VALUE</span>.
           </span>
-          <span className="about-1 leading-tight">
+          <span className="about-2 leading-tight">
             As a{" "}
             <span className="about-3 font-bold text-strong">
               FULL STACK DEVELOPER

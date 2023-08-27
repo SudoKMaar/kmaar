@@ -148,7 +148,9 @@ const Custom404 = () => {
         </svg>
       </div>
       <div className="absolute bottom-[20%] xl:bottom-[40%] right-[10%] 2xl:right-[20%]">
-        <button onClick={() => router.push("/")}>Back to Home</button>
+        <button className="primaryButton" onClick={() => router.push("/")}>
+          Back to Home
+        </button>
       </div>
     </div>
   );

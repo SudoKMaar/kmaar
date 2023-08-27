@@ -266,3 +266,16 @@ $bg: #f4faff;
       rgba(112, 0, 255, 0.75) 0%,
       rgba(60, 51, 80, 0) 100%);
 }
+
+kmhnav {
+  position: sticky;
+  top: 0;
+  padding-top: 5rem;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 40;
+}

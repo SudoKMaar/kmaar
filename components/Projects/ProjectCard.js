@@ -48,7 +48,7 @@ const ProjectCard = ({ projects }) => {
               </span>
               <span className="absolute bottom-1 flex flex-row link gap-3 z-20 link">
                 <a
-                  href={projectItem.source_code_link}
+                  href={projectItem.gitHubLink}
                   className="link primaryButton p-1 h-[30px] w-[120px] text-center drop-shadow-md bottom-1"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const ProjectCard = ({ projects }) => {
                   GitHub
                 </a>
                 <a
-                  href={projectItem.demo_link}
+                  href={projectItem.liveLink}
                   className="link primaryButton p-1 h-[30px] w-[120px] text-center shadow-md bottom-1"
                   target="_blank"
                   rel="noopener noreferrer"
