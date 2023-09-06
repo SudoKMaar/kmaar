@@ -13,7 +13,7 @@ function Navbar({ socials }) {
         className="flex flex-row items-center"
       >
         <a href="#contact" className="link glow object-scale-down">
-          <Image src="/kmaar.svg" alt="kmaar" height={50} width={50} />
+          <Image src="/kmaar.svg" alt="KMaar" height={50} width={50} />
         </a>
         <p className="text-white text-[20px] font-bold uppercase hidden md:inline-flex text-sm">
           KMaar

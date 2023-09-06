@@ -7,7 +7,7 @@ const Avatar = ({ pageInfo }) => {
         src={urlForImage(pageInfo.heroImage).url()}
         width={400}
         height={400}
-        alt=""
+        alt="Abhishek KMaar"
         className="translate-z-0 bottom-0 w-full h-full align-right -z-8"
       />
     </div>
