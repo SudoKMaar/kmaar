@@ -98,7 +98,7 @@ export const METADATA = {
     "Web Development",
   ].join(", "),
   image:
-    "https://cdn.sanity.io/images/x3sf3c46/production/09fe0fec287c62ce6ba8ae333643195f6662f45f-1366x648.png?w=2000&fit=max&auto=format",
+    "https://cdn.sanity.io/images/x3sf3c46/production/09fe0fec287c62ce6ba8ae333643195f6662f45f-1366x648.png?fit=max&auto=format",
   language: "English",
 };
 
