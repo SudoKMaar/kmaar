@@ -20,6 +20,7 @@ import { fetchSkils } from "utils/fetchSkills";
 import { fetchProjects } from "utils/fetchProjects";
 import { fetchSocials } from "utils/fetchSocials";
 import { fetchExperience } from "utils/fetchExperience";
+import { CrispProvider } from "@/components/Crisp/crispProvider";
 
 export default function Home({
   pageInfo,
@@ -62,6 +63,7 @@ export default function Home({
           <Loader />
         ) : (
           <>
+            <CrispProvider />
             <Cursor isDesktop={isDesktop} className="absolute z-50" />
             <section id="nav" className="sticky h-[10vh] z-50">
               <Navbar socials={socials} />
