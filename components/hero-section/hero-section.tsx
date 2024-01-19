@@ -17,7 +17,7 @@ async function HeroSection() {
     <div className="absolute h-screen w-full mx-auto top-0">
       <div className="w-[100vw] h-[100vh] absolute z-5 right-0 bottom-0">
         <div className="bg-explosion bg-cover bg-left md:bg-right bg-no-repeat w-full h-full absolute mix-bleed-color-dodge translate-z-0">
-          <ParticlesContainer />
+          //<ParticlesContainer />
         </div>
         <TopLeftImage />
         <MotionDiv
