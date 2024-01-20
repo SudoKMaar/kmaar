@@ -5,7 +5,7 @@ import { fadeIn } from "@/lib/motion";
 import { MotionDiv } from "@/components/ui/motion-elements";
 import ProjectBtn from "@/components/hero-section/project-button";
 import Avatar from "@/components/hero-section/avatar";
-import ParticlesContainer from "@/components/hero-section/particles-container";
+// import ParticlesContainer from "@/components/hero-section/particles-container";
 import TypeWriter from "@/components/hero-section/typewriter";
 import TopLeftImage from "@/components/hero-section/top-left-image";
 
@@ -17,7 +17,7 @@ async function HeroSection() {
     <div className="absolute h-screen w-full mx-auto top-0">
       <div className="w-[100vw] h-[100vh] absolute z-5 right-0 bottom-0">
         <div className="bg-explosion bg-cover bg-left md:bg-right bg-no-repeat w-full h-full absolute mix-bleed-color-dodge translate-z-0">
-          
+          {/* <ParticlesContainer /> */}
         </div>
         <TopLeftImage />
         <MotionDiv

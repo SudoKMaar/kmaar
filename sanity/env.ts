@@ -1,5 +1,5 @@
 export const apiVersion =
-  process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-01-07";
+  process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2021-03-25";
 
 export const dataset = assertValue(
   process.env.NEXT_PUBLIC_SANITY_DATASET,
@@ -11,6 +11,8 @@ export const projectId = assertValue(
   "Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID"
 );
 
+export const revalidateSecret = process.env.SANITY_REVALIDATE_SECRET;
+
 export const useCdn = false;
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
@@ -20,3 +22,5 @@ function assertValue<T>(v: T | undefined, errorMessage: string): T {
 
   return v;
 }
+
+export const studioUrl = "/studio";

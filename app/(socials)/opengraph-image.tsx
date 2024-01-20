@@ -19,10 +19,10 @@ interface USPProps {
 }
 
 const USP = ({ icon, uspValue, label }: USPProps) => (
-  <div className="flex flex-col text-[28px]">
-    <div className="flex flex-row font-bold items-center justify-center mr-6">
+  <div tw="flex flex-col text-[28px]">
+    <div tw="flex flex-row font-bold items-center justify-center mr-6">
       {icon}
-      <div className="flex ml-4">{uspValue}</div>
+      <div tw="flex ml-4">{uspValue}</div>
     </div>
     {label}
   </div>
@@ -40,11 +40,11 @@ export default async function Image(req: NextRequest) {
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      <div className="flex flex-row p-[48px] w-full h-full bg-white">
-        <div className="flex flex-col w-[80%] h-full">
-          <h1 className="text-[72px]">{pageName}</h1>
-          <p className="text-[32px] text-neutral-700">{pageDescription}</p>
-          <div className="flex mt-auto">
+      <div tw="flex flex-row p-[48px] w-full h-full bg-white">
+        <div tw="flex flex-col w-[80%] h-full">
+          <h1 tw="text-[72px]">{pageName}</h1>
+          <p tw="text-[32px] text-neutral-700">{pageDescription}</p>
+          <div tw="flex mt-auto">
             <USP
               label="forks"
               uspValue="2808"
@@ -99,10 +99,10 @@ export default async function Image(req: NextRequest) {
             />
           </div>
         </div>
-        <div className="flex">
+        <div tw="flex">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="w-32 h-32"
+            tw="w-32 h-32"
             src="https://cdn.sanity.io/images/x3sf3c46/production/8edd4eeeaff0ffa10002e8718543e0b455d698d6-4000x4000.png"
             alt="Abhishek Kumar"
           />

@@ -52,8 +52,8 @@ const Custom404 = () => {
   }, []);
 
   return (
-    <div className="flex justify-start items-center w-screen h-full">
-      <div className="container max-w-7xl lg:ml-40 cursor-none">
+    <div className="flex justify-start items-center w-screen h-screen socialbg-radial-gradient">
+      <div className="container max-w-7xl lg:ml-40 cursor-default">
         <svg className="milk-404" viewBox="0 0 600 600">
           <g id="milk-spill" fill="#fff">
             <path
@@ -148,8 +148,12 @@ const Custom404 = () => {
           </g>
         </svg>
       </div>
-      <div className="absolute bottom-[20%] xl:bottom-[40%] right-[10%] 2xl:right-[20%]">
-        <Button variant="primary" onClick={() => router.push("/")}>
+      <div className="absolute bottom-[20%] xl:bottom-[40%] right-[10%] 2xl:right-[20%] cursor-pointer">
+        <Button
+          variant="primary"
+          className="cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           Back to Home
         </Button>
       </div>

@@ -11,7 +11,7 @@ export const revalidate = 10;
 async function Navbar() {
   const social: Social[] = await getSocial();
   return (
-    <nav className="sticky top-0 py-1 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center transition-all duration-300 rounded-br-3xl rounded-bl-3xl backdrop-blur-[5px]">
+    <nav className="sticky top-0 py-1 flex items-start justify-between max-w-7xl mx-auto my-auto z-20 xl:items-center transition-all duration-300 rounded-br-3xl rounded-bl-3xl backdrop-blur-[5px]">
       <MotionDiv
         initial={{ x: -500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -30,7 +30,7 @@ async function Navbar() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-5 sm:flex flex-row link itmes-center justify-center"
+        className="grid grid-cols-4 sm:flex flex-row link itmes-center justify-center"
         aria-label="Abhishek KMaar Social Links"
       >
         {social?.map((socials) => (

@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/nanvbar/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Cursor from "@/components/cursor";
 import { i18n } from "@/i18n.config";
-
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
-  preload: false,
-  subsets: ["latin"],
-  fallback: ["Helvetica", "Arial", "sans-serif"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -131,22 +121,24 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default function PortfolioLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(roboto.className)}>
-        {/* <Cursor /> */}
+      <body
+        className={cn( "bg-background dark:bg-page-gradient")}
+      >
+        <Cursor />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           storageKey="KMaar-theme"
         >
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

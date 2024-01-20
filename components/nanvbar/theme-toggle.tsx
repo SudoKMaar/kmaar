@@ -27,9 +27,9 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <div className="h-[10vh] py-0" aria-label="button to toggle themes">
-      <div className="controls">
-        <label htmlFor="sync">Sync &lt;body&gt;</label>
-        <input id="sync" type="checkbox" />
+      <div className="controls hidden">
+        {/* <label htmlFor="sync"></label> */}
+        <input id="sync" type="checkbox" className="hidden" />
       </div>
       <button
         className="toggle link"

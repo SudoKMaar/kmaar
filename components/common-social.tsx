@@ -36,7 +36,7 @@ export default function SocialCommon({
         <p>{description}</p>
         <Link
           href={link}
-          className="bg-slate-200 text-black font-bold items-center w-full rounded-md px-3 py-3 flex gap-2 mt-4 justify-center text-xl link"
+          className="bg-slate-200 text-black font-bold items-center w-full rounded-md px-3 py-3 flex gap-2 mt-4 justify-center text-xl"
         >
           <Icon className="w-7 h-7" />
           {linkTitle}
