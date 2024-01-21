@@ -1,5 +1,4 @@
 import React from "react";
-import { getPageInfo } from "@/sanity/lib/query";
 import { PageInfo } from "@/typings";
 import { fadeIn } from "@/lib/motion";
 import { MotionDiv } from "@/components/ui/motion-elements";
@@ -8,8 +7,22 @@ import Avatar from "@/components/hero-section/avatar";
 // import ParticlesContainer from "@/components/hero-section/particles-container";
 import TypeWriter from "@/components/hero-section/typewriter";
 import TopLeftImage from "@/components/hero-section/top-left-image";
+import { client } from "@/sanity/lib/client";
 
 export const revalidate = 10;
+
+async function getPageInfo() {
+  const query = `*[_type == "pageInfo"][0]{
+    name,
+    role,
+    words,
+    heroImage  {alt, "image": asset->url},
+    profileImage {alt, "image": asset->url},
+  }`;
+
+  const data = await client.fetch(query);
+  return data;
+}
 
 async function HeroSection() {
   const pageInfo: PageInfo = await getPageInfo();

@@ -1,12 +1,21 @@
 import Image from "next/image";
 import React from "react";
 import { Social } from "@/typings";
-import { getSocial } from "@/sanity/lib/query";
 import { container, item } from "@/lib/motion";
 import ThemeToggle from "@/components/nanvbar/theme-toggle";
 import { MotionDiv, MotionSocialIcon } from "@/components/ui/motion-elements";
+import { client } from "@/sanity/lib/client";
 
 export const revalidate = 10;
+
+async function getSocial() {
+  const query = `*[_type == "social"]{
+    _type,_id,socialTitle,url
+  }`;
+
+  const data = await client.fetch(query);
+  return data;
+}
 
 async function Navbar() {
   const social: Social[] = await getSocial();

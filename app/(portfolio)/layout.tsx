@@ -7,8 +7,7 @@ import { i18n } from "@/i18n.config";
 
 export const metadata: Metadata = {
   title: {
-    default: "Abhishek Kumar | KMaar | Devfolio | Portfolio",
-    template: "%s - KMaar",
+    absolute: "Abhishek Kumar | KMaar | Devfolio | Portfolio",
   },
   description:
     "Abhishek Kumar a Full Stack Developer who creates cutting-edge web applications using Next.js, React, Node.js, and JavaScript. His portfolio showcases his skills in both frontend and backend development, as well as his passion for solving real-world problems with innovative solutions. Whether it is building a dynamic e-commerce website, a user-friendly blog platform, or a responsive landing page, Abhishek delivers high-quality results that meet the needs of his clients and users. Explore his portfolio to learn more about his projects, experience, and vision for the future of web development.",
@@ -128,9 +127,7 @@ export default function PortfolioLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn( "bg-background dark:bg-page-gradient")}
-      >
+      <body className={cn("bg-background dark:bg-page-gradient")}>
         <Cursor />
         <ThemeProvider
           attribute="class"

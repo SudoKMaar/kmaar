@@ -19,7 +19,7 @@ const CollaborationSection = () => {
       ref={ref}
     >
       <motion.h1
-        className="text-5xl sm:text-7xl text-center text-white"
+        className="text-4xl sm:text-7xl text-center text-white"
         style={{ y: yText }}
       >
         Interested in <br />

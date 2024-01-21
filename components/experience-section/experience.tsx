@@ -1,11 +1,22 @@
 import { Experience } from "@/typings";
-import { getExperience } from "@/sanity/lib/query";
-import { cn } from "@/lib/utils";
 import ExperienceTimeline from "@/components/experience-section/experience-timeline";
 import { Container } from "@/components/container";
 import { SectionHeading, SectionTitle } from "@/components/section-heading";
+import { client } from "@/sanity/lib/client";
 
 export const revalidate = 10;
+
+async function getExperience() {
+  const query = `*[_type == "experience"]{
+    date,
+    jobTitle,
+    iconBg,
+    companyName, 
+    companyLogo{alt, "image": asset->url},
+    points}`;
+  const data = await client.fetch(query);
+  return data;
+}
 
 async function ExperienceSection() {
   const experience: Experience[] = await getExperience();

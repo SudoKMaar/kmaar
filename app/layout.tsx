@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/nanvbar/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Cursor from "@/components/cursor";
 import { i18n } from "@/i18n.config";
-
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   style: ["normal", "italic"],
@@ -149,6 +150,8 @@ export default function RootLayout({
           {/* <Navbar /> */}
           {children}
         </ThemeProvider>
+        <Analytics />
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   );

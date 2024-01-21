@@ -1,17 +1,56 @@
 import { Skill } from "@/typings";
-import {
-  getSkill,
-  getSkill1,
-  getSkill2,
-  getSkill3,
-  getSkill4,
-} from "@/sanity/lib/query";
 import SkillDataProvider from "@/components/skill-section/skill-data-provider";
 import { SectionHeading, SectionTitle } from "@/components/section-heading";
 import { Container } from "@/components/container";
+import { client } from "@/sanity/lib/client";
 
 export const revalidate = 10;
 
+async function getSkill() {
+  const query = `*[_type == "skill"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const data = await client.fetch(query);
+  return data;
+}
+async function getSkill1() {
+  const query = `*[_type == "skill"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const data = await client.fetch(query);
+  return data;
+}
+async function getSkill2() {
+  const query = `*[_type == "skill"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const data = await client.fetch(query);
+  return data;
+}
+async function getSkill3() {
+  const query = `*[_type == "skill"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const data = await client.fetch(query);
+  return data;
+}
+async function getSkill4() {
+  const query = `*[_type == "skill"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const data = await client.fetch(query);
+  return data;
+}
 async function SkillSection() {
   const skill: Skill[] = await getSkill();
   const skill1: Skill[] = await getSkill1();

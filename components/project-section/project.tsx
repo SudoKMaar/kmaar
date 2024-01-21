@@ -1,10 +1,22 @@
 import { Projects } from "@/typings";
-import { getProject } from "@/sanity/lib/query";
 import { SectionHeading, SectionTitle } from "@/components/section-heading";
 import MarqueeCards from "@/components/project-section/marquee-card";
 import ProjectCard from "@/components/project-section/project-card";
+import { client } from "@/sanity/lib/client";
 
 export const revalidate = 10;
+
+async function getProject() {
+  const query = `*[_type == "project"]{
+    projectTitle,
+    projectImage{ "image": asset->url},
+    description,
+    liveLink,
+    gitHubLink
+  }`;
+  const data = await client.fetch(query);
+  return data;
+}
 
 async function ProjectSection() {
   const project: Projects[] = await getProject();
