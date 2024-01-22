@@ -14,11 +14,6 @@ export const contentType = "image/png";
 
 // Image generation
 export default async function Image() {
-  // Font
-  const robotoRegular = fetch(new URL("", import.meta.url)).then((res) =>
-    res.arrayBuffer()
-  );
-
   return new ImageResponse(
     (
       // ImageResponse JSX element
@@ -30,7 +25,7 @@ export default async function Image() {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
-          backgroundImage: "url('/social-og.png')",
+          backgroundImage: "url('https://kmaar.vercel.app/social-og.png')",
           backgroundSize: "cover",
           fontSize: 60,
           letterSpacing: -2,
@@ -84,14 +79,6 @@ export default async function Image() {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
       ...size,
-      fonts: [
-        {
-          name: "Roboto",
-          data: await robotoRegular,
-          style: "normal",
-          weight: 400,
-        },
-      ],
     }
   );
 }

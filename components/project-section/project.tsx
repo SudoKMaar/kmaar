@@ -1,25 +1,37 @@
+import { groq } from "next-sanity";
 import { Projects } from "@/typings";
 import { SectionHeading, SectionTitle } from "@/components/section-heading";
 import MarqueeCards from "@/components/project-section/marquee-card";
 import ProjectCard from "@/components/project-section/project-card";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
-async function getProject() {
-  const query = `*[_type == "project"]{
+// async function getProject() {
+//   const query = `*[_type == "project"]{
+//     projectTitle,
+//     projectImage{ "image": asset->url},
+//     description,
+//     liveLink,
+//     gitHubLink
+//   }`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
+
+async function ProjectSection() {
+  const query = groq`*[_type == "project"]{
     projectTitle,
     projectImage{ "image": asset->url},
     description,
     liveLink,
     gitHubLink
   }`;
-  const data = await client.fetch(query);
-  return data;
-}
+  const project: Projects[] = await sanityFetch({
+    query: query,
+    tags: ["project"],
+  });
 
-async function ProjectSection() {
-  const project: Projects[] = await getProject();
   return (
     <>
       <SectionHeading

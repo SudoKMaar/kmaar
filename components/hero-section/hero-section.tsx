@@ -1,4 +1,5 @@
 import React from "react";
+import { groq } from "next-sanity";
 import { PageInfo } from "@/typings";
 import { fadeIn } from "@/lib/motion";
 import { MotionDiv } from "@/components/ui/motion-elements";
@@ -7,25 +8,35 @@ import Avatar from "@/components/hero-section/avatar";
 // import ParticlesContainer from "@/components/hero-section/particles-container";
 import TypeWriter from "@/components/hero-section/typewriter";
 import TopLeftImage from "@/components/hero-section/top-left-image";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
-async function getPageInfo() {
-  const query = `*[_type == "pageInfo"][0]{
+// async function getPageInfo() {
+//   const query = `*[_type == "pageInfo"][0]{
+//     name,
+//     role,
+//     words,
+//     heroImage  {alt, "image": asset->url},
+//     profileImage {alt, "image": asset->url},
+//   }`;
+
+//   const data = await client.fetch(query);
+//   return data;
+// }
+
+async function HeroSection() {
+  const query = groq`*[_type == "pageInfo"][0]{
     name,
     role,
     words,
     heroImage  {alt, "image": asset->url},
     profileImage {alt, "image": asset->url},
   }`;
-
-  const data = await client.fetch(query);
-  return data;
-}
-
-async function HeroSection() {
-  const pageInfo: PageInfo = await getPageInfo();
+  const pageInfo: PageInfo = await sanityFetch({
+    query: query,
+    tags: ["pageInfo"],
+  });
   return (
     <div className="absolute h-screen w-full mx-auto top-0">
       <div className="w-[100vw] h-[100vh] absolute z-5 right-0 bottom-0">

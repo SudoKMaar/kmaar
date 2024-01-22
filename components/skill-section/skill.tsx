@@ -1,62 +1,105 @@
+import { groq } from "next-sanity";
 import { Skill } from "@/typings";
 import SkillDataProvider from "@/components/skill-section/skill-data-provider";
 import { SectionHeading, SectionTitle } from "@/components/section-heading";
 import { Container } from "@/components/container";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
-async function getSkill() {
-  const query = `*[_type == "skill"]{
-    skillTitle, 
-    skillLogo{ "image": asset->url},
-    skillHeight,
-    skillWidth}`;
-  const data = await client.fetch(query);
-  return data;
-}
-async function getSkill1() {
-  const query = `*[_type == "skill1"]{
-    skillTitle, 
-    skillLogo{ "image": asset->url},
-    skillHeight,
-    skillWidth}`;
-  const data = await client.fetch(query);
-  return data;
-}
-async function getSkill2() {
-  const query = `*[_type == "skill2"]{
-    skillTitle, 
-    skillLogo{ "image": asset->url},
-    skillHeight,
-    skillWidth}`;
-  const data = await client.fetch(query);
-  return data;
-}
-async function getSkill3() {
-  const query = `*[_type == "skill3"]{
-    skillTitle, 
-    skillLogo{ "image": asset->url},
-    skillHeight,
-    skillWidth}`;
-  const data = await client.fetch(query);
-  return data;
-}
-async function getSkill4() {
-  const query = `*[_type == "skill4"]{
-    skillTitle, 
-    skillLogo{ "image": asset->url},
-    skillHeight,
-    skillWidth}`;
-  const data = await client.fetch(query);
-  return data;
-}
+// async function getSkill() {
+//   const query = `*[_type == "skill"]{
+//     skillTitle,
+//     skillLogo{ "image": asset->url},
+//     skillHeight,
+//     skillWidth}`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
+// async function getSkill1() {
+//   const query = `*[_type == "skill1"]{
+//     skillTitle,
+//     skillLogo{ "image": asset->url},
+//     skillHeight,
+//     skillWidth}`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
+// async function getSkill2() {
+//   const query = `*[_type == "skill2"]{
+//     skillTitle,
+//     skillLogo{ "image": asset->url},
+//     skillHeight,
+//     skillWidth}`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
+// async function getSkill3() {
+//   const query = `*[_type == "skill3"]{
+//     skillTitle,
+//     skillLogo{ "image": asset->url},
+//     skillHeight,
+//     skillWidth}`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
+// async function getSkill4() {
+//   const query = `*[_type == "skill4"]{
+//     skillTitle,
+//     skillLogo{ "image": asset->url},
+//     skillHeight,
+//     skillWidth}`;
+//   const data = await client.fetch(query);
+//   return data;
+// }
+
 async function SkillSection() {
-  const skill: Skill[] = await getSkill();
-  const skill1: Skill[] = await getSkill1();
-  const skill2: Skill[] = await getSkill2();
-  const skill3: Skill[] = await getSkill3();
-  const skill4: Skill[] = await getSkill4();
+  const skillQuery = groq`*[_type == "skill"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const skill: Skill[] = await sanityFetch({
+    query: skillQuery,
+    tags: ["skill"],
+  });
+  const skill1Query = groq`*[_type == "skill1"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const skill1: Skill[] = await sanityFetch({
+    query: skill1Query,
+    tags: ["skill1"],
+  });
+  const skill2Query = groq`*[_type == "skill2"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const skill2: Skill[] = await sanityFetch({
+    query: skill2Query,
+    tags: ["skill2"],
+  });
+  const skill3Query = groq`*[_type == "skill3"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const skill3: Skill[] = await sanityFetch({
+    query: skill3Query,
+    tags: ["skill3"],
+  });
+  const skill4Query = groq`*[_type == "skill4"]{
+    skillTitle, 
+    skillLogo{ "image": asset->url},
+    skillHeight,
+    skillWidth}`;
+  const skill4: Skill[] = await sanityFetch({
+    query: skill4Query,
+    tags: ["skill4"],
+  });
+
   return (
     <>
       <SectionHeading

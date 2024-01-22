@@ -5,7 +5,7 @@ import { Social } from "@/typings";
 import { container, item } from "@/lib/motion";
 import ThemeToggle from "@/components/nanvbar/theme-toggle";
 import { MotionDiv, MotionSocialIcon } from "@/components/ui/motion-elements";
-import { client, sanityFetch } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 
 // export const revalidate = 10;
 
@@ -26,7 +26,6 @@ async function Navbar() {
     query: query,
     tags: ["social"],
   });
-  // const social: Social[] = await getSocial();
   return (
     <nav className="sticky top-0 py-1 flex items-start justify-between max-w-7xl mx-auto my-auto z-20 xl:items-center transition-all duration-300 rounded-br-3xl rounded-bl-3xl backdrop-blur-[5px]">
       <MotionDiv
