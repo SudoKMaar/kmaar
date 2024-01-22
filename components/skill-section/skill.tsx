@@ -16,7 +16,7 @@ async function getSkill() {
   return data;
 }
 async function getSkill1() {
-  const query = `*[_type == "skill"]{
+  const query = `*[_type == "skill1"]{
     skillTitle, 
     skillLogo{ "image": asset->url},
     skillHeight,
@@ -25,7 +25,7 @@ async function getSkill1() {
   return data;
 }
 async function getSkill2() {
-  const query = `*[_type == "skill"]{
+  const query = `*[_type == "skill2"]{
     skillTitle, 
     skillLogo{ "image": asset->url},
     skillHeight,
@@ -34,7 +34,7 @@ async function getSkill2() {
   return data;
 }
 async function getSkill3() {
-  const query = `*[_type == "skill"]{
+  const query = `*[_type == "skill3"]{
     skillTitle, 
     skillLogo{ "image": asset->url},
     skillHeight,
@@ -43,7 +43,7 @@ async function getSkill3() {
   return data;
 }
 async function getSkill4() {
-  const query = `*[_type == "skill"]{
+  const query = `*[_type == "skill4"]{
     skillTitle, 
     skillLogo{ "image": asset->url},
     skillHeight,

@@ -1,24 +1,32 @@
 import Image from "next/image";
 import React from "react";
+import { groq } from "next-sanity";
 import { Social } from "@/typings";
 import { container, item } from "@/lib/motion";
 import ThemeToggle from "@/components/nanvbar/theme-toggle";
 import { MotionDiv, MotionSocialIcon } from "@/components/ui/motion-elements";
-import { client } from "@/sanity/lib/client";
+import { client, sanityFetch } from "@/sanity/lib/client";
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
-async function getSocial() {
-  const query = `*[_type == "social"]{
-    _type,_id,socialTitle,url
-  }`;
+// async function getSocial() {
+//   const query = groq`*[_type == "social"]{
+//     _type,_id,socialTitle,url
+//   }`;
 
-  const data = await client.fetch(query);
-  return data;
-}
+//   const data = await client.fetch(query);
+//   return data;
+// }
 
 async function Navbar() {
-  const social: Social[] = await getSocial();
+  const query = groq`*[_type == "social"]{
+    _type,_id,socialTitle,url
+  }`;
+  const social: Social[] = await sanityFetch({
+    query: query,
+    tags: ["social"],
+  });
+  // const social: Social[] = await getSocial();
   return (
     <nav className="sticky top-0 py-1 flex items-start justify-between max-w-7xl mx-auto my-auto z-20 xl:items-center transition-all duration-300 rounded-br-3xl rounded-bl-3xl backdrop-blur-[5px]">
       <MotionDiv

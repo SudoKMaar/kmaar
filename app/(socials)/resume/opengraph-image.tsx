@@ -75,7 +75,7 @@ export default async function Image() {
             right: 200,
           }}
         >
-          Codepen{" "}
+          Resume
         </div>
       </div>
     ),

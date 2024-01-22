@@ -12,7 +12,7 @@ export const projectId = assertValue(
 );
 
 export const revalidateSecret = process.env.SANITY_REVALIDATE_SECRET;
-
+export const token = process.env.SANITY_TOEKN;
 export const useCdn = false;
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
