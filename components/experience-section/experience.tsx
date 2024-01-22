@@ -20,7 +20,7 @@ import { sanityFetch } from "@/sanity/lib/client";
 // }
 
 async function ExperienceSection() {
-  const query = groq`*[_type == "experience"]{
+  const query = groq`*[_type == "experience"] | order(sortOrder desc){
     date,
     jobTitle,
     iconBg,

@@ -37,6 +37,7 @@ export interface Experience extends SanityBody {
     image: string;
   };
   points: string[];
+  sortOrder: number;
 }
 
 export interface Skill extends SanityBody {

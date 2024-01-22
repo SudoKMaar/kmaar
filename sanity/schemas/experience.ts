@@ -34,5 +34,6 @@ export default defineType({
       type: "array",
       of: [{ type: "string" }],
     },
+    { name: "sortOrder", title: "Sort Order", type: "number" },
   ],
 });

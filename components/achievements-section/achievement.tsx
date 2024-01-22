@@ -15,7 +15,7 @@ import AchievementsSlider from "@/components/achievements-section/slider";
 // }
 
 async function AchievementsSection() {
-  const query = groq`*[_type == "achievement"]{
+  const query = groq`*[_type == "achievement"] | order(year desc){
          title,
          image{ "image": asset->url},
          year}`;
