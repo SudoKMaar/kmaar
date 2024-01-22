@@ -15,9 +15,9 @@ export const contentType = "image/png";
 // Image generation
 export default async function Image() {
   // Font
-  const robotoRegular = fetch(
-    new URL("fonts/Roboto-Regular.ttf", import.meta.url)
-  ).then((res) => res.arrayBuffer());
+  const robotoRegular = fetch(new URL("", import.meta.url)).then((res) =>
+    res.arrayBuffer()
+  );
 
   return new ImageResponse(
     (
