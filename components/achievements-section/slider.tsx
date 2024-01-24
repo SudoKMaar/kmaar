@@ -51,7 +51,7 @@ const AchievementSlider: React.FC<AchievementSliderProps> = ({
             loop={true}
             autoplay={{
               delay: 2000,
-              disableOnInteraction: true,
+              disableOnInteraction: false,
             }}
           >
             {achievements.map((achievement, index) => (

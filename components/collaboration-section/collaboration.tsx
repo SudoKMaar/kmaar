@@ -25,9 +25,9 @@ const CollaborationSection = () => {
         Interested in <br />
         COLLABORATION
       </motion.h1>
-      <motion.div className="bg-[url('/mountains.png')] sm:bg-cover bg-bottom w-full h-full absolute z-[3] bg-no-repeat bg-contain"></motion.div>
+      <motion.div className="bg-[url('/mountains.webp')] sm:bg-cover bg-bottom w-full h-full absolute z-[3] bg-no-repeat bg-contain"></motion.div>
       <motion.div
-        className="bg-[url('/sun.png')] dark:bg-[url('/planets.webp')] sm:bg-cover bg-bottom w-full h-full absolute z-[2] bg-no-repeat bg-contain"
+        className="bg-[url('/sun.webp')] dark:bg-[url('/planets.webp')] sm:bg-cover bg-bottom w-full h-full absolute z-[2] bg-no-repeat bg-contain"
         style={{
           y: yBg,
         }}

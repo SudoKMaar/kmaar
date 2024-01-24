@@ -7,7 +7,7 @@ import ProjectBtn from "@/components/hero-section/project-button";
 import Avatar from "@/components/hero-section/avatar";
 // import ParticlesContainer from "@/components/hero-section/particles-container";
 import TypeWriter from "@/components/hero-section/typewriter";
-import TopLeftImage from "@/components/hero-section/top-left-image";
+// import TopLeftImage from "@/components/hero-section/top-left-image";
 import { sanityFetch } from "@/sanity/lib/client";
 
 // export const revalidate = 10;
@@ -43,7 +43,7 @@ async function HeroSection() {
         <div className="bg-explosion bg-cover bg-left md:bg-right bg-no-repeat w-full h-full absolute mix-bleed-color-dodge translate-z-0">
           {/* <ParticlesContainer /> */}
         </div>
-        <TopLeftImage />
+        {/* <TopLeftImage /> */}
         <MotionDiv
           initial={{ scale: 0 }}
           animate={{ rotate: 180, scale: 1 }}

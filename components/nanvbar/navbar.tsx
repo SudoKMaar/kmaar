@@ -36,7 +36,7 @@ async function Navbar() {
         aria-label="KMaar logo"
       >
         <a href="#" className="link glow object-scale-down cursor-none">
-          <Image src="/kmaar.svg" alt="KMaar" height={50} width={50} />
+          <Image src="/kmaar.ico" alt="Abhishek KMaar" height={50} width={50} />
         </a>
         <p className="sm:text-[#808080] sm:dark:text-white dark:md:text-white md:text-[#808080] text-[20px] font-bold hidden sm:visible sm:inline-flex text-xl">
           KMaar

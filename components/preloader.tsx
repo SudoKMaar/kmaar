@@ -8,7 +8,6 @@ const words = [
   "Bonjour",
   "Ciao",
   "Olà",
-  "やあ",
   "Hallå",
   "Guten tag",
   "नमस्ते",
