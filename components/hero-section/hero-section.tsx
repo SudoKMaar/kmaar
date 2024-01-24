@@ -57,19 +57,17 @@ async function HeroSection() {
         >
           <ProjectBtn />
         </MotionDiv>
-        <a href="#about">
-          <div className="absolute bottom-0 right-[50%] w-[35px] h-[64px] rounded-3xl border-4 border-[#aaa6c3] flex justify-center items-start z-40 p-2 link cursor-none">
-            <MotionDiv
-              animate={{ y: [0, 24, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-[#aaa6c3] mb-1"
-            />
-          </div>
-        </a>
+        <div className="absolute bottom-0 right-[50%] w-[35px] h-[64px] rounded-3xl border-4 border-[#aaa6c3] flex justify-center items-start z-40 p-2 link cursor-none">
+          <MotionDiv
+            animate={{ y: [0, 24, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="w-3 h-3 rounded-full bg-[#aaa6c3] mb-1"
+          />
+        </div>
 
         <MotionDiv
           variants={fadeIn("up", "tween", 2.4, 1.4)}

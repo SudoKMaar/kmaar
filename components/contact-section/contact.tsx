@@ -73,9 +73,9 @@ const ContactSection = () => {
           variants={slideIn("left", "tween", 0.2, 1)}
           className="flex-[0.75] bg-black p-8 rounded-2xl glassmorphic"
         >
-          <p className="sm:text-[18px] text-[14px] text-white uppercase tracking-wider">
+          <h4 className="sm:text-[18px] text-[14px] text-white uppercase tracking-wider">
             Summon me anywhere
-          </p>
+          </h4>
           <h3 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
             Contact Saga
           </h3>

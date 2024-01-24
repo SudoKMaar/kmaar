@@ -27,14 +27,14 @@ const CollaborationSection = () => {
       </motion.h1>
       <motion.div className="bg-[url('/mountains.png')] sm:bg-cover bg-bottom w-full h-full absolute z-[3] bg-no-repeat bg-contain"></motion.div>
       <motion.div
-        className="bg-[url('/sun.png')] dark:bg-[url('/planets.png')] sm:bg-cover bg-bottom w-full h-full absolute z-[2] bg-no-repeat bg-contain"
+        className="bg-[url('/sun.png')] dark:bg-[url('/planets.webp')] sm:bg-cover bg-bottom w-full h-full absolute z-[2] bg-no-repeat bg-contain"
         style={{
           y: yBg,
         }}
       ></motion.div>
       <motion.div
         style={{ x: yBg }}
-        className="bg-[url('/stars.png')] bg-cover bg-bottom w-full h-full absolute z-[1]"
+        className="bg-[url('/stars.webp')] bg-cover bg-bottom w-full h-full absolute z-[1]"
       ></motion.div>
     </div>
   );
