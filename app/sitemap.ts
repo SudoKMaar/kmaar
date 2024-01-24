@@ -74,5 +74,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
       changeFrequency: "monthly",
     },
+    {
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/gfg`,
+      lastModified: new Date(),
+      priority: 0.8,
+      changeFrequency: "monthly",
+    },
   ];
 }
