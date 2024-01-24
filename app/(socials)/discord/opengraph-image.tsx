@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "KMaar Social";
+export const alt = "KMaar Discord";
 export const size = {
   width: 1200,
   height: 630,

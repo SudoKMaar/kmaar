@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "KMaar Twitter";
+export const alt = "KMaar GFG";
 export const size = {
   width: 1200,
   height: 630,
@@ -70,7 +70,7 @@ export default async function Image() {
             right: 200,
           }}
         >
-          Twitter
+          Geeks4Geeks
         </div>
       </div>
     ),

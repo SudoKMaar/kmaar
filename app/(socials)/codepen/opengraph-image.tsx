@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "KMaar Social";
+export const alt = "KMaar Codepen";
 export const size = {
   width: 1200,
   height: 630,
@@ -25,8 +25,7 @@ export default async function Image() {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
-          backgroundImage:
-            "url('https://kmaar.vercel.apphttps://kmaar.vercel.app/social-og.png')",
+          backgroundImage: "url('https://kmaar.vercel.app/social-og.png')",
           backgroundSize: "cover",
           fontSize: 60,
           letterSpacing: -2,
