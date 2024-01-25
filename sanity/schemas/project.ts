@@ -20,5 +20,6 @@ export default defineType({
     { name: "description", title: "Project Description", type: "text" },
     { name: "liveLink", title: "Live Link", type: "url" },
     { name: "gitHubLink", title: "GitHub Link", type: "url" },
+    { name: "sortOrder", title: "Sort Order", type: "number" },
   ],
 });

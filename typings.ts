@@ -59,6 +59,7 @@ export interface Projects extends SanityBody {
   description: string;
   liveLink: string;
   gitHubLink: string;
+  sortOrder: number;
 }
 
 export interface Achievement extends SanityBody {

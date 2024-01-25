@@ -20,7 +20,7 @@ import { sanityFetch } from "@/sanity/lib/client";
 // }
 
 async function ProjectSection() {
-  const query = groq`*[_type == "project"]{
+  const query = groq`*[_type == "project"] | order(sortOrder desc){
     projectTitle,
     projectImage{ "image": asset->url},
     description,
