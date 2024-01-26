@@ -74,7 +74,7 @@ const AchievementSlider: React.FC<AchievementSliderProps> = ({
           </Swiper>
         </div>
 
-        <ul className="circles">
+        <ul className="circles hidden md:block">
           <li></li>
           <li></li>
           <li></li>
